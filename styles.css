@@ -15,6 +15,7 @@ body{
     padding: 0px;
     margin: 0px;
     min-height: 100vh;
+    height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -23,20 +24,147 @@ body{
 header{
     position: relative;
     background-image: url(./images/pattern-bg.png);
-    height: 35vh;
+    height: 35%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 6px;
+    padding-top: 8px;
 }
 
 header>h1{
     color: white;
-    font-weight: 400;
-    font-size: 1.8rem;
+    font-weight: 500;
+    font-size: 1.75rem;
+}
+.input-container{
+    display: flex;
+    width: 38.5%;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 16px;
 }
 
+input, button{
+    margin: 0px;
+    border: none;
+}
+
+input{
+    width: 100%;
+    padding: 0px 25px;
+    color: var(--VeryDarkGray);
+    font-size: large;
+}
+
+input::placeholder{
+    color: var(--DarkGray);
+    font-size: large;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 24px;
+    background-color: black;
+    color: white;
+}
+
+.result-container{
+    background-color: white;
+    box-shadow: 0 0 5px var(--DarkGray);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    --height: 160px;
+    height: var(--height);
+    margin-bottom: calc(-1*var(--height)/2);
+    width: 77%;
+    padding: 20px 34px;
+    z-index: 1;
+
+}
+.result-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.vertical-divider{
+    background-color: var(--DarkGray);
+    height: 80%;
+    width: 1px;
+    margin: 0px 30px;
+}
+
+.result-title{
+    text-transform: uppercase;
+    color: var(--DarkGray);
+    font-weight: 700;
+    font-size: 0.8rem;
+
+}
+
+.result-details{
+    margin: 0px;
+    font-size: 1.4rem;
+}
 main{
     position: relative;
+    height: 65%;
+    z-index: 0;
+}
 
+#map {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+
+@media screen and (max-height: 680px) {
+    body {
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .result-container{
+        width: 80%;
+        flex-direction: column;
+        --height: 300px;
+        margin-bottom: calc(-1*var(--height) + 120px);
+    }
+    header>h1{
+        color: white;
+        font-weight: 500;
+        font-size: 1.4rem;
+    }
+    .input-container{
+        width: 80%;
+    }
+
+    
+    .vertical-divider {
+        display: none;
+    }
+    
+    .result-title {
+        text-transform: uppercase;
+        color: var(--DarkGray);
+        font-weight: 700;
+        font-size: 0.6rem;
+
+    }
+    
+    .result-details {
+        margin: 0px;
+        font-size: 1rem;
+    }
 }

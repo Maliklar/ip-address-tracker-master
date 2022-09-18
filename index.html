@@ -6,19 +6,49 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | IP Address Tracker</title>
   <link rel="stylesheet" href="./styles.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+   integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   defer
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <script src="./main.js" defer></script>
   <header>
-    <h1>IP Adress Tracker</h1>
+    <h1>IP Address Tracker</h1>
     <div class="input-container">
-      <input type="text">
-      <button id="submit-btn"></button>
+      <input type="text" name="adress" id="address-input" placeholder="Search for any IP address or domain" oninput="searchInput(this.value)" >
+      <button id="submit-btn" onclick="search()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <div class="result-container">
+      <div class="result-item">
+        <p class="result-title">IP ADDRESS</p>
+        <h1 class="result-details">192.212.174.101</h1>
+      </div>
+      <div class="vertical-divider"></div>
+      <div class="result-item">
+        <h2 class="result-title">LOCATION</h2>
+        <h1 class="result-details">Brooklyn, NY 10001</h1>
+      </div>
+      <div class="vertical-divider"></div>
+      <div class="result-item">
+        <h2 class="result-title">TIMEZONE</h2>
+        <h1 class="result-details">UTC -05:00</h1>
+      </div>
+      <div class="vertical-divider"></div>
+      <div class="result-item">
+        <h2 class="result-title">ISP</h2>
+        <h1 class="result-details">SpaceX Starlink</h1>
+      </div>
+      
     </div>
   </header>
-
   <main>
+     <div id="map"></div>
 
   </main>
 
